@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neon Markdown Visualizer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="background-glow glow-1"></div>
+  <div class="background-glow glow-2"></div>
+
+  <main class="app">
+    <section class="panel editor-panel glass">
+      <div class="panel-top">
+        <div class="top-left-actions">
+          <button id="downloadBtn" class="btn btn-blue" type="button">Download</button>
+          <button id="openBtn" class="btn btn-blue" type="button">Open</button>
+          <input id="fileInput" type="file" accept=".md,text/markdown" hidden />
+        </div>
+
+        <div class="top-right-actions">
+          <button id="visualizeBtn" class="btn btn-green" type="button">Visualize</button>
+        </div>
+      </div>
+
+      <div class="editor-wrapper">
+        <div id="lineNumbers" class="line-numbers" aria-hidden="true">1</div>
+        <textarea id="markdownInput" spellcheck="false" placeholder="# Welcome
+
+Write your markdown here...
+
+## Example
+- Neon UI
+- Glassy panels
+- Live line numbers
+
+```js
+console.log('hello');
+```"></textarea>
+      </div>
+    </section>
+
+    <section class="panel preview-panel glass">
+      <div class="preview-header">
+        <h2>Preview</h2>
+      </div>
+      <div id="preview" class="preview-content">
+        <div class="preview-placeholder">
+          Your rendered markdown will appear here.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
